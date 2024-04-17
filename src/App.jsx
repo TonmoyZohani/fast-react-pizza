@@ -13,11 +13,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader:men
       },
       {
         path: "/menu",
         element: <Menu />,
+        loader:menuLoader
       },
       {
         path: "/cart",
