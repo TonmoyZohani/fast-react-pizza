@@ -4,7 +4,7 @@ import SearchOrder from '../features/order/SearchOrder'
 
 const Header = () => {
   return (
-    <header>
+    <header className='bg-slate-400'>
         <Link to="/">Fast React Pizza Co.</Link>
         <SearchOrder/>
         <p>Tonmoy</p>
