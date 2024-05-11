@@ -25,7 +25,7 @@ function getPosition() {
   import { createSlice } from "@reduxjs/toolkit";
 
   const initialState = {
-    username:"Tonmoy Zohani",
+    username:"",
   }
 
   const userSlice = createSlice({
