@@ -25,7 +25,7 @@ function getPosition() {
   import { createSlice } from "@reduxjs/toolkit";
 
   const initialState = {
-    username:"",
+    username:"Tonmoy Zohani",
   }
 
   const userSlice = createSlice({
@@ -40,4 +40,4 @@ function getPosition() {
 
   export const {updateName} = userSlice.actions;
 
-  export default userSlice.reducer
+  export default userSlice.reducer;
