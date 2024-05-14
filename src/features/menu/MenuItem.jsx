@@ -8,6 +8,7 @@ function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
   const handleAddToCart = () => {
+
     const newItem = {
       pizzaId: id,
       name: name,
@@ -40,9 +41,9 @@ function MenuItem({ pizza }) {
             </p>
           )}
 
-          <Button onClick={() => handleAddToCart()} type="small">
+          <button onClick={() => handleAddToCart()} type="small">
             Add to cart
-          </Button>
+          </button>
         </div>
       </div>
     </li>
