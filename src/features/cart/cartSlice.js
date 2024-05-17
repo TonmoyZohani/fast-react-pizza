@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Cart from "./Cart";
 
 const initialState = {
   cart: [],
@@ -45,10 +44,21 @@ export const {
 
 export default cartSlice.reducer;
 
-export const getCart=(state)=>state.cart.cart;
+export const getCart = (state) => state.cart.cart;
 
 export const getTotalCartQuantity = (state) =>
   state.cart.cart.reduce((acc, cur) => acc + cur.quantity, 0);
 
 export const getTotalPrice = (state) =>
   state.cart.cart.reduce((acc, cur) => acc + cur.totalPrice, 0);
+
+export const getCurrentQuantityById = id => state => state.cart.cart.find((item) => item.pizzaId === id)?.quantity ?? 0;
+
+// the function written avobe is written in normal function below
+
+// export function getCurrentQuantityById(id) {
+//   return function(state) {
+//     const item = state.cart.cart.find((item) => item.pizzaId !== id);
+//     return item ? item.quantity : 0;
+//   };
+// }
