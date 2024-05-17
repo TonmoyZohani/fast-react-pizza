@@ -3,7 +3,8 @@ import LinkButton from '../../ui/LinkButton';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearCart, getCart } from './cartSlice';
+import { clearCart, getCart,getTotalPrice } from './cartSlice';
+import { formatCurrency } from "../../utils/helpers";
 import EmptyCart from './EmptyCart';
 
 const fakeCart = [
@@ -35,6 +36,9 @@ function Cart() {
   const username = useSelector((state) => state.user.username);
   const cart = useSelector(getCart);
   const dispatch = useDispatch();
+  const totalCartPrice = useSelector(getTotalPrice);
+  const priorityPrice = 0;
+  const totalPrice = totalCartPrice + priorityPrice;
 
   if(!cart.length){
     return <EmptyCart/>
@@ -54,7 +58,7 @@ function Cart() {
 
       <div className="mt-6 space-x-2">
         <Button to="/order/new" type="primary">
-          Order pizzas
+          {`Order pizzas ${formatCurrency(totalPrice)}`}
         </Button>
 
         {/* <Button onClick={()=>dispatch(clearCart())} type="secondary">Clear cart</Button> */}
